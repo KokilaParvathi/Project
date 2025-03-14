@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Portal - Manage Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #e3e6eb;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sidebar ul li a:hover {
+            color: #007bff;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f7f7f7;
+            margin-bottom: 20px;
+        }
+
+        .header .search {
+            width: 100%;
+            max-width: 300px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f7;
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .header .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .card-container {
+            background-color: #e1e4ea;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: #f1f1f1;
+        }
+
+        .card .details {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .card .details img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .add-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            text-decoration: none;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .add-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="logo.png" alt="Main Logo">
+            <h1>FC Portal</h1>
+            <ul>
+                <li><a href="home.html"><img src="home.png" alt="Home Icon">Home</a></li>
+                <li><a href="#"><img src="fc.png" alt="Manage Icon">Manage categories</a></li>
+                <li><a href="#"><img src="p.jpg" alt="Users Icon">Manage users</a></li>
+                <li><a href="report.html"><img src="alert.png" alt="Reports Icon">Reports</a></li>
+                <li><a href="login.html"><img src="logout.png" alt="Logout Icon">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="header">
+                <input type="text" class="search" placeholder="Search">
+                <div class="profile">
+                    <img src="user.png" alt="Profile Picture">
+                    Nikithaa G
+                </div>
+            </div>
+
+            <div class="card-container">
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Prof. Kokila P</p>
+                    </div>
+                    <p>FC 1</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Prof. Lakshmann D</p>
+                    </div>
+                    <p>FC 2</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Dr. Siva G</p>
+                    </div>
+                    <p>FC 3</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Dr. Sivaraj G</p>
+                    </div>
+                    <p>FC 4</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Prof. Akshara T</p>
+                    </div>
+                    <p>FC 5</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Prof. Kavin A</p>
+                    </div>
+                    <p>FC 6</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Prof. Priya M</p>
+                    </div>
+                    <p>FC 7</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Dr. Hema U</p>
+                    </div>
+                    <p>FC 8</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Prof. Gautham S</p>
+                    </div>
+                    <p>FC 9</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+                <a href="#" class="card">
+                    <div class="details">
+                        <img src="user.png" alt="User Icon">
+                        <p>Dr. Raj G</p>
+                    </div>
+                    <p>FC 10</p>
+                    <p>01/09/2024 to 15/09/2024</p>
+                </a>
+            </div>
+            <a href="#" class="add-button">+</a>
+        </div>
+    </div>
+</body>
+
+</html>

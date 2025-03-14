@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Portal Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .modal {
+            background-color: white;
+            border-radius: 10px;
+            width: 400px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header {
+            background-color: #a56ee3;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-body {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-footer button {
+            background-color: #00a2e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-footer button:hover {
+            background-color: #007bb8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="modal">
+    <div class="modal-header">
+        Note !!
+    </div>
+    <div class="modal-body">
+        Oops! This FC is private. Only choose the FC allocated for you.
+    </div>
+    <div class="modal-footer">
+        <button onclick="closeModal()">Ok</button>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        // Close the modal
+        document.querySelector('.modal').style.display = 'none';
+        
+        // Redirect to fc.html
+        window.location.href = 'fc.html';
+    }
+</script>
+
+</body>
+</html>

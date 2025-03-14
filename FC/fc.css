@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E9EFF6; /* Light blue background */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #E9EFF6; /* Matching sidebar background */
+    width: 250px;
+    padding: 20px;
+}
+
+.sidebar img {
+    width: 180px; /* Adjust the size to fit within the sidebar */
+    margin: 0 auto 20px auto; /* Center the logo and add margin at the bottom */
+    display: block;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Reduced margin for better spacing */
+    font-size: 16px; /* Adjusted font size */
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 18px; /* Adjusted font size */
+}
+
+.sidebar ul li a:hover {
+    color: red;
+}
+
+.sidebar ul li img {
+    width: 24px; /* Adjusted icon size */
+    height: 24px; /* Adjusted icon size */
+    margin-right: 10px;
+}
+
+.content {
+    flex: 1;
+    background-color: #F0F0F0;
+    padding: 20px;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D0D0D0; /* Gray header background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.header .search {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #E9EFF6;
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.header .profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card-container {
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 100px); /* Adjusted to fit the header */
+}
+
+.card {
+    background-color: #DCDADA;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card .details {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.card .details p {
+    margin: 0 10px;
+}
+
+.logout-link {
+    color: red;
+    margin-left: 10px;
+    text-decoration: none;
+}

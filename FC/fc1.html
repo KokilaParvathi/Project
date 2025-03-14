@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9eff6;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #dce8f5;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .sidebar ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sidebar ul li a:hover {
+            color: red;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #bfb7b7;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header .search {
+            width: 100%;
+            max-width: 400px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #e9eff6;
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .header .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .card-container {
+            background-color: #d9d9d9;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 100px);
+        }
+
+        .card-container h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group p {
+            margin: 0;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .form-group .option-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .option-buttons label {
+            background-color: #f0f0f0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .option-buttons label:hover {
+            background-color: #dce8f5;
+            border-color: #007bff;
+        }
+
+        .option-buttons input[type="radio"] {
+            display: none;
+        }
+
+        .option-buttons input[type="radio"]:checked + label {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .submit-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .submit-btn.enabled {
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="logo.png" alt="Main Logo">
+        <h1>FC Portal</h1>
+        <ul>
+            <li><a href="fc.html"><img src="home.png" alt="Home Icon">Home</a></li>
+            <li><a href="fc.html"><img src="fc.png" alt="FC Icon">FC</a></li>
+            <li><a href="alert.html"><img src="alert.png" alt="Alert Icon">Alert</a></li>
+            <li><a href="login.html"><img src="logout.png" alt="Logout Icon">Logout</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <input type="text" class="search" placeholder="Search">
+            <div class="profile">
+                <img src="user.png" alt="Profile Picture">
+                Nikithaa G
+                <a href="login.html" class="logout-link">Logout</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <h2>FC 1 Checklist</h2>
+            <form id="fc-form">
+                <div class="form-group">
+                    <p>1) AI lab fans working properly?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q1-yes" name="q1" value="yes">
+                        <label for="q1-yes">Yes</label>
+                        <input type="radio" id="q1-no" name="q1" value="no">
+                        <label for="q1-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>2) Is the AC system  in AI lab adjustable to maintain a comfortable temperature for attendees?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q2-yes" name="q2" value="yes">
+                        <label for="q2-yes">Yes</label>
+                        <input type="radio" id="q2-no" name="q2" value="no">
+                        <label for="q2-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>3) Is the seating capacity of the AI lab sufficient for your event?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q3-yes" name="q3" value="yes">
+                        <label for="q3-yes">Yes</label>
+                        <input type="radio" id="q3-no" name="q3" value="no">
+                        <label for="q3-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>4) Is there a dedicated technical support team available in case of WiFi issues?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q4-yes" name="q4" value="yes">
+                        <label for="q4-yes">Yes</label>
+                        <input type="radio" id="q4-no" name="q4" value="no">
+                        <label for="q4-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>5) Has the venue been recently cleaned?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q5-yes" name="q5" value="yes">
+                        <label for="q5-yes">Yes</label>
+                        <input type="radio" id="q5-no" name="q5" value="no">
+                        <label for="q5-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>6) Is the LED functioning flawlessly without any issues?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q6-yes" name="q6" value="yes">
+                        <label for="q6-yes">Yes</label>
+                        <input type="radio" id="q6-no" name="q6" value="no">
+                        <label for="q6-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>7) Are the fire exits clearly marked and accessible?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q7-yes" name="q7" value="yes">
+                        <label for="q7-yes">Yes</label>
+                        <input type="radio" id="q7-no" name="q7" value="no">
+                        <label for="q7-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>8) Are there sufficient restrooms available for the expected number of attendees?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q8-yes" name="q8" value="yes">
+                        <label for="q8-yes">Yes</label>
+                        <input type="radio" id="q8-no" name="q8" value="no">
+                        <label for="q8-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>9) Is the venue's signage clear and informative for attendees?</p>
+                    <div class="option-buttons">
+                        <input type="radio" id="q9-yes" name="q9" value="yes">
+                        <label for="q9-yes">Yes</label>
+                        <input type="radio" id="q9-no" name="q9" value="no">
+                        <label for="q9-no">No</label>
+                    </div>
+                </div>
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn" id="submit-btn" disabled>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('fc-form');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    form.addEventListener('change', () => {
+        let allAnswered = true;
+        
+        for (let i = 1; i <= 9; i++) {
+            const radios = document.getElementsByName('q' + i);
+            let answered = false;
+            
+            for (let radio of radios) {
+                if (radio.checked) {
+                    answered = true;
+                    break;
+                }
+            }
+            
+            if (!answered) {
+                allAnswered = false;
+                break;
+            }
+        }
+        
+        if (allAnswered) {
+            submitBtn.disabled = false;
+            submitBtn.classList.add('enabled');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('enabled');
+        }
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevents the default form submission
+        window.location.href = 'fc.html'; // Redirects to fc.html
+    });
+</script>
+
+</body>
+</html>

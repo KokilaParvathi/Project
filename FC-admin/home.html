@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Portal Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .sidebar {
+            background-color: #dce8f5;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 20px;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .sidebar ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sidebar ul li a:hover {
+            color: red;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d9d9d9;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header .search {
+            width: 100%;
+            max-width: 400px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #e9eff6;
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .header .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard .compliance-chart {
+            width: 45%;
+            text-align: center;
+        }
+
+        .dashboard .compliance-chart canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        .dashboard .submission-status {
+            width: 45%;
+            text-align: center;
+        }
+
+        .dashboard .submission-status table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            background-color: #e9eff6;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dashboard .submission-status table th, 
+        .dashboard .submission-status table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .dashboard .submission-status table th {
+            background-color: #d9d9d9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="logo.png" alt="Institution Logo">
+        <h1>FC Portal</h1>
+        <ul>
+            <li><a href="home.html"><img src="home.png" alt="Home">Home</a></li>
+            <li><a href="manage_categories.html"><img src="fc.png" alt="Manage Categories">Manage categories</a></li>
+            <li><a href="ma.html"><img src="p.jpg" alt="Manage Users">Manage users</a></li>
+            <li><a href="report.html"><img src="alert.png" alt="Reports">Reports</a></li>
+            <li><a href="login.html"><img src="logout.png" alt="Logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <input type="text" class="search" placeholder="Search">
+            <div class="profile">
+                <img src="user.png" alt="Profile Picture">
+                Nikithaa G
+                <a href="login.html" class="logout-link">Logout</a>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="compliance-chart">
+                <h2>Overall compliance</h2>
+                <!-- Placeholder for pie chart -->
+                <canvas id="complianceChart"></canvas>
+            </div>
+
+            <div class="submission-status">
+                <h2>Over submitting the form</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>FC</th>
+                            <th>FILLED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FC 1</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
+                            <td>FC 2</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
+                            <td>FC 3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>FC 4</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>FC 5</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
+                            <td>FC 6</td>
+                            <td>✔</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('complianceChart').getContext('2d');
+    var complianceChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['FC 1', 'FC 2', 'FC 3', 'FC 4'],
+            datasets: [{
+                data: [76.7, 1, 12.7, 9.6],
+                backgroundColor: ['#7fd5ea', '#fcacb8', '#e2a4fc', '#fcdf7f'],
+                hoverBackgroundColor: ['#6ecde1', '#fb9ba6', '#d98bf0', '#fcce6e']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

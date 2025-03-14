@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9eff6;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #dce8f5;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .sidebar ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sidebar ul li a:hover {
+            color: red;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #bfb7b7;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header .search {
+            width: 100%;
+            max-width: 400px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #e9eff6;
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .header .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .card-container {
+            background-color: #d9d9d9;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 100px);
+        }
+
+        .card {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .card .details {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .card .details p {
+            margin: 0;
+        }
+
+        .logout-link {
+            color: red;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .alert-title {
+            font-size: 24px;
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .alert-list {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .alert-list p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="logo.png" alt="Main Logo">
+        <h1>FC Portal</h1>
+        <ul>
+            <li><a href="home.html"><img src="home.png" alt="Home Icon">Home</a></li>
+            <li><a href="fc.html"><img src="fc.png" alt="FC Icon">FC</a></li>
+            <li><a href="#"><img src="alert.png" alt="Alert Icon">Alert</a></li>
+            <li><a href="login.html" class="logout-link"><img src="logout.png" alt="Logout Icon">Logout</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <input type="text" class="search" placeholder="Search">
+            <div class="profile">
+                <img src="user.png" alt="Profile Picture">
+                Nikithaa G
+                <a href="login.html" class="logout-link">Logout</a>
+            </div>
+        </div>
+        <div class="alert-title">
+            Consecutive NO's
+        </div>
+        <div class="alert-list">
+            <p>In FC 1 attention needed for 1) All the fans working properly?</p>
+            <p>In FC 1 attention needed for 5) Has the venue been recently cleaned?</p>
+            <p>In FC 2 attention needed for 8) Are there adequate lighting and acoustics for the seminar?</p>
+            <p>In FC 2 attention needed for 9) Are the Microphone and Speaker functioning correctly?</p>
+            <p>In FC 3 attention needed for 9) Ques9</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
